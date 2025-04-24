@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Events</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header class="hero">
+			<div id="video-modal" class="video-modal">
+				<div class="video-content">
+					<span class="close">&times;</span>
+					<video controls autoplay>
+						<source src="image/1.mp4" type="video/mp4" />
+						Ваш браузер не поддерживает HTML5 видео.
+					</video>
+				</div>
+			</div>
+
+			<!-- Video Background -->
+			<video class="videobg" autoplay muted loop playsinline>
+				<source src="image/1.mp4" type="video/mp4" />
+				Your browser does not support HTML5 video.
+			</video>
+
+			<!-- Overlay -->
+			<div class="overlay">
+				<!-- Navigation -->
+				<div class="nav">
+					<div class="nav-inner">
+						<div class="logo"><strong>Step</strong><span>Way</span></div>
+					</div>
+					<!-- Burger -->
+					<button id="burger" class="burger" aria-label="Toggle menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+					<div class="menu">
+						<a href="#">Фото</a>
+						<a href="#">О нас</a>
+						<a href="#">Контакты</a>
+					</div>
+				</div>
+
+				<!-- Main slogan -->
+				<div class="main-content">
+					<h1>
+						<span>Танець, що</span>
+						<span>запалює</span>
+						<span>серця</span>
+					</h1>
+
+					<!-- Play Button -->
+					<div class="play-button">
+						<svg viewBox="0 0 64 64">
+							<circle
+								cx="32"
+								cy="32"
+								r="31"
+								stroke="white"
+								stroke-width="2"
+								fill="none"
+							/>
+							<polygon points="26,20 46,32 26,44" fill="white" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<h1>Фото</h1>
+			<p class="description">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aliquam
+				eum in iusto recusandae deleniti sit consequuntur velit rerum fuga
+				magnam explicabo libero, veritatis laboriosam pariatur ipsam porro eaque
+				minima.
+			</p>
+
+			<div class="grid">
+				<div class="grid-item item-1">
+					<img src="image/IMG_8679.JPG" alt="CHRISTMAS NIGHT" />
+					<div class="caption">
+						<p>CHRISTMAS NIGHT</p>
+						<p class="sub">Chicago Dance Theatre</p>
+					</div>
+				</div>
+
+				<div class="grid-item item-2">
+					<img src="image/IMG_8682.JPG" alt="WINTER GALA CONCERT" />
+					<div class="caption">
+						<p>WINTER GALA CONCERT</p>
+						<p class="sub">Shubert Hall</p>
+					</div>
+				</div>
+
+				<div class="grid-item item-3">
+					<img src="image/IMG_1256.JPG" alt="SPRING SCHOOL" />
+					<div class="caption">
+						<p>SPRING SCHOOL</p>
+					</div>
+				</div>
+
+				<div class="grid-item item-4">
+					<img src="image/IMG_1273.JPG" alt="HALL" />
+				</div>
+
+				<div class="grid-item item-5">
+					<img src="image/IMG_0422.JPG" alt="GOLDEN HALL" />
+				</div>
+			</div>
+
+			<div class="view-all">
+				<a href=""> Посмотреть все фото... </a>
+			</div>
+		</main>
+		<script>
+			const burger = document.querySelector('.burger')
+			const menu = document.querySelector('.menu')
+
+			burger.addEventListener('click', () => {
+				menu.classList.toggle('active')
+				burger.classList.toggle('active')
+			})
+
+			const playButton = document.querySelector('.play-button')
+			const modal = document.getElementById('video-modal')
+			const closeBtn = modal.querySelector('.close')
+			const video = modal.querySelector('video')
+
+			playButton.addEventListener('click', () => {
+				modal.style.display = 'flex'
+				video.play()
+			})
+
+			closeBtn.addEventListener('click', () => {
+				modal.style.display = 'none'
+				video.pause()
+				video.currentTime = 0
+			})
+
+			window.addEventListener('click', e => {
+				if (e.target === modal) {
+					modal.style.display = 'none'
+					video.pause()
+					video.currentTime = 0
+				}
+			})
+		</script>
+	</body>
+</html>
