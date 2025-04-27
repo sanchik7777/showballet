@@ -13,12 +13,20 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<div id="preloader" class="preloader">
+			<div class="loader-content">
+				<div class="loader-bar">
+					<div class="loader-progress"></div>
+				</div>
+				<div id="loader-percentage" class="loader-percentage">0%</div>
+			</div>
+		</div>
 		<header class="hero">
 			<div id="video-modal" class="video-modal">
 				<div class="video-content">
 					<span class="close">&times;</span>
 					<video controls autoplay>
-						<source src="image/3.mp4" type="video/mp4" />
+						<source src="image/1.mp4" type="video/mp4" />
 						Ваш браузер не поддерживает HTML5 видео.
 					</video>
 				</div>
@@ -26,7 +34,7 @@
 
 			<!-- Video Background -->
 			<video class="videobg" autoplay muted loop playsinline>
-				<source src="image/3.mp4" type="video/mp4" />
+				<source src="image/1.mp4" type="video/mp4" />
 				Your browser does not support HTML5 video.
 			</video>
 
@@ -35,7 +43,9 @@
 				<!-- Navigation -->
 				<div class="nav">
 					<div class="nav-inner">
-						<div class="logo"><strong>Step</strong><span>Way</span></div>
+						<a href="/"
+							><div class="logo"><strong>Step</strong><span>Way</span></div></a
+						>
 					</div>
 					<!-- Burger -->
 					<button id="burger" class="burger" aria-label="Toggle menu">
@@ -44,6 +54,13 @@
 						<span></span>
 					</button>
 					<div class="menu">
+						<a href="#"
+							><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+								<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+								<path
+									d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+								/></svg
+						></a>
 						<a href="#">Фото</a>
 						<a href="#">О нас</a>
 						<a href="#">Контакты</a>
@@ -52,11 +69,11 @@
 
 				<!-- Main slogan -->
 				<div class="main-content">
-					<h1>
+					<!-- <h1>
 						<span>Танець, що</span>
 						<span>запалює</span>
 						<span>серця</span>
-					</h1>
+					</h1> -->
 
 					<!-- Play Button -->
 					<div class="play-button">
@@ -76,51 +93,105 @@
 			</div>
 		</header>
 		<main>
-			<h1>Фото</h1>
-			<p class="description">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aliquam
-				eum in iusto recusandae deleniti sit consequuntur velit rerum fuga
-				magnam explicabo libero, veritatis laboriosam pariatur ipsam porro eaque
-				minima.
-			</p>
+			<section class="gallery fade-in-up">
+				<h1>Галерея</h1>
+				<!-- Добавим декоративные элементы -->
 
-			<div class="grid">
-				<div class="grid-item item-1">
-					<img src="image/IMG_8679.JPG" alt="CHRISTMAS NIGHT" />
-					<div class="caption">
-						<p>CHRISTMAS NIGHT</p>
-						<p class="sub">Chicago Dance Theatre</p>
+				<div class="deco-line"></div>
+
+				<p class="description">
+					Яскраві миті наших виступів, тренувань та закулісся.
+				</p>
+
+				<div class="grid">
+					<div class="grid-item item-1">
+						<img src="image/IMG_8679.JPG" alt="CHRISTMAS NIGHT" />
+						<div class="caption">
+							<p>CHRISTMAS NIGHT</p>
+							<p class="sub">Chicago Dance Theatre</p>
+						</div>
+					</div>
+
+					<div class="grid-item item-2">
+						<img src="image/IMG_8682.JPG" alt="WINTER GALA CONCERT" />
+						<div class="caption">
+							<p>WINTER GALA CONCERT</p>
+							<p class="sub">Shubert Hall</p>
+						</div>
+					</div>
+
+					<div class="grid-item item-3">
+						<img src="image/IMG_1256.JPG" alt="SPRING SCHOOL" />
+						<div class="caption">
+							<p>SPRING SCHOOL</p>
+						</div>
+					</div>
+
+					<div class="grid-item item-4">
+						<img src="image/IMG_1273.JPG" alt="HALL" />
+					</div>
+
+					<div class="grid-item item-5">
+						<img src="image/IMG_0422.JPG" alt="GOLDEN HALL" />
 					</div>
 				</div>
 
-				<div class="grid-item item-2">
-					<img src="image/IMG_8682.JPG" alt="WINTER GALA CONCERT" />
-					<div class="caption">
-						<p>WINTER GALA CONCERT</p>
-						<p class="sub">Shubert Hall</p>
+				<div class="view-all">
+					<a href=""> Посмотреть все фото... </a>
+				</div>
+			</section>
+			<section class="about">
+				<h2 class="fade-in-up">Про компанію</h2>
+				<div class="about-content">
+					<div class="about-text">
+						<div class="fade-in-up">
+							StepWay ShowBallet — український шоу-балет, заснований хореографом
+							Юлією Бобковою та її асистентом Владиславом Степовим у 2021 році.
+						</div>
+						<div class="fade-in-up">
+							Ми створюємо яскраві шоу-номери, працюємо з національними
+							артистами та беремо участь у міжнародних проєктах.
+						</div>
+						<div class="fade-in-up">
+							Наш останній проект — унікальне бальне шоу «Carmen: The New
+							Story», де кожен виступ — окрема історія, розказана мовою танцю,
+							музики і світла.
+						</div>
+						<a href="/" class="btn fade-in-up">Детальніше</a>
 					</div>
+					<img class="fade-in-up" src="image/1.jpg" alt="about" />
 				</div>
-
-				<div class="grid-item item-3">
-					<img src="image/IMG_1256.JPG" alt="SPRING SCHOOL" />
-					<div class="caption">
-						<p>SPRING SCHOOL</p>
-					</div>
-				</div>
-
-				<div class="grid-item item-4">
-					<img src="image/IMG_1273.JPG" alt="HALL" />
-				</div>
-
-				<div class="grid-item item-5">
-					<img src="image/IMG_0422.JPG" alt="GOLDEN HALL" />
-				</div>
-			</div>
-
-			<div class="view-all">
-				<a href=""> Посмотреть все фото... </a>
-			</div>
+			</section>
 		</main>
+		<footer class="footer">
+			<div class="footer-content fade-in-up">
+				<div class="footer-logo"><strong>Step</strong><span>Way</span></div>
+				<nav class="footer-nav">
+					<a href="#">Фото</a>
+					<a href="#">О нас</a>
+					<a href="#">Контакты</a>
+				</nav>
+				<div class="footer-contacts">
+					<p>Телефон: +380 00 000 00 00</p>
+					<p>Email: stepwayshowballet@gmail.com</p>
+					<div class="social-icons">
+						<a href="#" target="_blank">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+								<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+								<path
+									d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+								/>
+							</svg>
+						</a>
+						<!-- Можно добавить еще иконки если нужно -->
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom fade-in-up">
+				© StepWay ShowBallet, 2025. Всі права захищені.
+			</div>
+		</footer>
+
 		<script>
 			const burger = document.querySelector('.burger')
 			const menu = document.querySelector('.menu')
@@ -154,5 +225,6 @@
 				}
 			})
 		</script>
+		<script src="main.js"></script>
 	</body>
 </html>
