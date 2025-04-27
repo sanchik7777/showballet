@@ -7,11 +7,61 @@ body {
 	font-family: sans-serif;
 	background: black;
 	color: white;
+	font-family: 'Playfair Display', serif;
+}
+svg {
+	fill: #ffffff;
+	width: 24px;
+	transition: all 0.3s ease;
+}
+svg:hover {
+	fill: #b22222;
+	/* бордо или тёмно-красный оттенок */
+}
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #111;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 9999;
+	transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-main {
-	padding: 24px;
+.loader-content {
+	text-align: center;
 }
+
+.loader-bar {
+	width: 300px;
+	height: 8px;
+	background: #333;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.loader-progress {
+	height: 100%;
+	width: 0%;
+	background: linear-gradient(90deg, #b22222, #b22222);
+	border-radius: 5px;
+	transition: width 0.3s ease;
+}
+
+.loader-percentage {
+	color: white;
+	font-size: 4rem;
+	font-family: 'Playfair Display', serif;
+}
+/* main {
+	padding: 24px;
+} */
 main h1 {
 	text-align: center;
 }
@@ -19,6 +69,7 @@ h1 {
 	font-size: 4rem;
 	font-weight: bold;
 	margin-bottom: 1rem;
+	color: #b22222;
 }
 a,
 a:hover {
@@ -30,6 +81,7 @@ p.description {
 	margin-bottom: 2rem;
 	max-width: 50%;
 	margin: 0 auto 3rem;
+	text-align: center;
 }
 .hero {
 	position: relative;
@@ -66,7 +118,13 @@ p.description {
 	position: relative;
 	height: 60px;
 }
-
+.menu a {
+	transition: all 0.3s ease;
+	font-weight: 700;
+}
+.menu a:hover {
+	color: #b22222;
+}
 .nav-inner {
 	position: absolute;
 	left: 50%;
@@ -76,6 +134,9 @@ p.description {
 .logo {
 	font-size: 47px;
 	text-align: center;
+}
+.logo span {
+	color: #b22222; /* бордо или тёмно-красный оттенок */
 }
 /* Бургер кнопка */
 .burger {
@@ -130,7 +191,6 @@ p.description {
 	font-weight: 900;
 	margin-top: 0.5rem;
 	color: #ccc;
-	font-family: 'Playfair Display', serif;
 }
 .play-button {
 	position: absolute;
@@ -145,6 +205,19 @@ p.description {
 	height: 64px;
 	fill: white;
 	cursor: pointer;
+}
+.gallery {
+	padding: 4rem 1.5rem;
+}
+/* Декоративные элементы */
+.gallery-deco {
+}
+
+.deco-line {
+	width: 100px;
+	height: 2px;
+	background: #b22222;
+	margin: 2rem auto;
 }
 
 .grid {
@@ -165,8 +238,12 @@ p.description {
 	object-fit: cover;
 	display: block;
 	border-radius: 12px;
+	transition: transform 0.3s ease;
 }
-
+.grid-item:hover img {
+	transform: scale(1.05);
+	transition: transform 0.3s ease;
+}
 .caption {
 	position: absolute;
 	bottom: 16px;
@@ -189,15 +266,18 @@ p.description {
 
 .view-all a {
 	padding: 1rem;
-	border: 2px solid #d1d1d1;
+	background-color: transparent;
+	border: 2px solid #b22222;
 	border-radius: 42px;
 	font-weight: 600;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease;
 }
+
 .view-all a:hover {
-	background: #d1d1d1;
-	color: black;
+	background-color: #b22222;
+	color: #fff;
 }
+
 /* Desktop grid from 1024px and up */
 @media (min-width: 1024px) {
 	.grid {
@@ -267,11 +347,161 @@ p.description {
 	cursor: pointer;
 	z-index: 10000;
 }
+/* Секция "Про компанію" */
+.about {
+	padding: 80px 20px;
+	background-color: #111; /* тёмный фон, чтобы текст и фото выделялись */
+	color: #fff;
+}
+
+.about h2 {
+	text-align: center;
+	font-size: 4rem;
+	margin-bottom: 40px;
+	font-weight: 700;
+	color: #b22222; /* бордо или тёмно-красный оттенок */
+}
+
+.about-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	gap: 40px;
+}
+
+.about-text {
+	flex: 1;
+	min-width: 300px;
+	font-size: 18px;
+	line-height: 1.6;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.about img {
+	flex: 1;
+	max-width: 500px;
+	width: 100%;
+	height: auto;
+	border-radius: 20px;
+	box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2); /* лёгкое красное свечение */
+	object-fit: cover;
+}
+
+.about .btn {
+	display: block;
+	margin: 50px auto 0;
+	padding: 14px 30px;
+	background-color: transparent;
+	border: 2px solid #b22222;
+	border-radius: 30px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 1px;
+	transition: all 0.3s ease;
+	text-align: center;
+	text-decoration: none;
+}
+
+.about .btn:hover {
+	background-color: #b22222;
+	color: #fff;
+}
+
+/* Footer */
+.footer {
+	background-color: #111;
+	color: #fff;
+	padding: 60px 20px 20px;
+	font-size: 16px;
+}
+
+.footer-content {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 30px;
+}
+
+.footer-logo {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.footer-logo span {
+	color: #b22222; /* акцент на цвете */
+}
+
+.footer-nav {
+	display: flex;
+	gap: 20px;
+}
+
+.footer-nav a {
+	color: #fff;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.footer-nav a:hover {
+	color: #b22222;
+}
+
+.footer-contacts p {
+	margin: 5px 0;
+}
+
+.social-icons {
+	margin-top: 10px;
+}
+
+.social-icons a img {
+	width: 24px;
+	height: 24px;
+	filter: invert(1);
+	transition: 0.3s;
+}
+
+.social-icons a:hover img {
+	filter: invert(36%) sepia(94%) saturate(7492%) hue-rotate(356deg)
+		brightness(93%) contrast(109%);
+}
+
+.footer-bottom {
+	text-align: center;
+	margin-top: 40px;
+	font-size: 14px;
+	color: #777;
+}
+.fade-in-up {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
 
 @media (max-width: 1024px) {
 	p.description {
 		max-width: 100%;
 		margin: 0 auto 3rem;
+	}
+	.about img {
+		max-width: 350px;
+	}
+	.overlay {
+		padding: 40px 25px;
 	}
 }
 @media (max-width: 768px) {
@@ -328,5 +558,23 @@ p.description {
 		position: static;
 		margin-top: 2rem;
 		transform: none;
+	}
+	.about-content {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+	.about .btn {
+		margin: 0;
+	}
+	.about h2 {
+		font-size: 3rem;
+	}
+	h1 {
+		font-size: 3rem;
+	}
+}
+@media (max-width: 425px) {
+	.about h2 {
+		font-size: 2.3rem;
 	}
 }
